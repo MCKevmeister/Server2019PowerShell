@@ -20,7 +20,7 @@ foreach ($User in $ImportADUsers)
 	$OU = $User.OU
 
 	#First part of the loop checks to see if the user already exists in Active Directory
-	if (Get-ADUser -F {SamAccountName -eq $Username})
+	if (Get-ADUser -Filter {SamAccountName -eq $Username})
 	{
 		 #If the user account does exist, this warning will be "printed" onto the screen
 		 Write-Warning "This user account already exists in Active Directory: $Username"
